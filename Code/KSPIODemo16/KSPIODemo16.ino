@@ -229,9 +229,8 @@ void loop()
  //display.show(VData.LiquidFuelTot);
  //display.show(x,ALIGN_LEFT);
 
+//WORK!!!!!!!!!!!!!!!!!!
 
- //Hello World
- //bhjdfkjashdfkljahslkdfjhasljkfhjksgdfkjhgsdfjkgsadkjfgsjkdgfjdffghgsdajha
 //---------------------------------------------------------------------------------------------------
 }
 
