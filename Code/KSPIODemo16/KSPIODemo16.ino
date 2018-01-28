@@ -228,9 +228,6 @@ void loop()
  //display.show(12345,1000,ALIGN_LEFT);
  //display.show(VData.LiquidFuelTot);
  //display.show(x,ALIGN_LEFT);
-
-//WORK!!!!!!!!!!!!!!!!!!
-
 //---------------------------------------------------------------------------------------------------
 }
 
