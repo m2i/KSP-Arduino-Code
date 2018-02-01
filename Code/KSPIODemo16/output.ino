@@ -56,28 +56,28 @@ void controls() {
     CPacket.Yaw = constrain(map(analogRead(A1),0,1024,-1000,1000),-1000, 1000);
 */
 //=================================================================================================
-if (digitalRead(22) == 0)        //Roll Right CoPilot
+if (digitalRead(22) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1)        //Roll Right CoPilot
       CPacket.Roll = constrain(map(   1024   ,0,1024,-1000,1000),-1000, 1000);
 else if (digitalRead(22) & digitalRead(23) == 1)
       CPacket.Roll = constrain(map(  512   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
-if (digitalRead(23) == 0)        //Roll Left CoPilot
+if (digitalRead(23) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1) //Roll Left CoPilot
       CPacket.Roll = constrain(map(   0   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
-if (digitalRead(24) == 0)        //Pitch up CoPilot
+if (digitalRead(24) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1)        //Pitch up CoPilot
       CPacket.Pitch = constrain(map(   1024   ,0,1024,-1000,1000),-1000, 1000);
 else if (digitalRead(24) & digitalRead(25) == 1)
       CPacket.Pitch = constrain(map(  512   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
-if (digitalRead(25) == 0)        //Pitch Down CoPilot
+if (digitalRead(25) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1)        //Pitch Down CoPilot
       CPacket.Pitch = constrain(map(   0   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
-if (digitalRead(26) == 0)        //Yaw Right CoPilot
+if (digitalRead(26) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1)        //Yaw Right CoPilot
       CPacket.Yaw = constrain(map(   1024   ,0,1024,-1000,1000),-1000, 1000);
 else if (digitalRead(26) & digitalRead(27) == 1)
       CPacket.Yaw = constrain(map(  512   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
-if (digitalRead(27) == 0)        //Yaw Left CoPilot
+if (digitalRead(27) == 0 & digitalRead(47)== 1 & digitalRead(48)== 1 & digitalRead(49)== 1 & digitalRead(50)== 1 & digitalRead(51)== 1 & digitalRead(52)== 1)        //Yaw Left CoPilot
       CPacket.Yaw = constrain(map(   0   ,0,1024,-1000,1000),-1000, 1000);
 //============================================
 if (digitalRead(28))        //SAS
