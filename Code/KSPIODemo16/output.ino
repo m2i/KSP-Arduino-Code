@@ -9,7 +9,7 @@ void output() {
 
 void controls() {
   if (Connected) {
-
+/*
     if (digitalRead(SASPIN)) { //--------- This is how you do main controls
       MainControls(SAS, HIGH);
       setSASMode(SMSAS); //setting SAS mode
@@ -30,7 +30,7 @@ void controls() {
     else
       ControlGroups(1, LOW);
       
-    /*
+    
        if (getSASMode() == SMPrograde) { //--------- This is how you read SAS modes
          //Blink LED, do stuff, etc.
        }
