@@ -94,7 +94,11 @@ else
           MainControls(SAS, HIGH);*/
           
 
-         
+//============================================
+if (digitalRead(29))        //Action Group 1
+      MainControls(AGCustom01,HIGH);
+else
+      MainControls(AGCustom01,LOW);
 //============================================
 if (digitalRead(30))        //Lights
       MainControls(LIGHTS, LOW);
@@ -155,6 +159,26 @@ if (digitalRead(42))        //Stage transition
 else
       MainControls(STAGE, LOW);
 //============================================
+if (digitalRead(43))        //Action Group 2
+      MainControls(AGCustom02,HIGH);
+else
+      MainControls(AGCustom02,LOW);
+//============================================
+if (digitalRead(44))        //Action Group 3
+      MainControls(AGCustom03,HIGH);
+else
+      MainControls(AGCustom03,LOW);
+//============================================
+if (digitalRead(45))        //Action Group 4
+      MainControls(AGCustom04,HIGH);
+else
+      MainControls(AGCustom04,LOW);
+//============================================
+if (digitalRead(46))        //Action Group 5
+      MainControls(AGCustom05,HIGH);
+else
+      MainControls(AGCustom05,LOW);
+//============================================
 if (digitalRead(47) == 0)        //Roll Right
       CPacket.Roll = constrain(map(   1024   ,0,1024,-1000,1000),-1000, 1000);
 else if (digitalRead(47) & digitalRead(48) == 1)
@@ -209,6 +233,7 @@ void controlsInit() {
   pinMode(28, INPUT_PULLUP);     //SAS Joystick
   
   //Middle
+  pinMode(29, INPUT_PULLUP);     //Action Group 1
   pinMode(30, INPUT_PULLUP);     //Lights
   pinMode(31, INPUT_PULLUP);     //Breaks
   pinMode(32, INPUT_PULLUP);     //Gears
@@ -222,9 +247,10 @@ void controlsInit() {
   pinMode(40, INPUT_PULLUP);     //Abort
   pinMode(41, INPUT_PULLUP);     //Ignition
   pinMode(42, INPUT_PULLUP);     //Stages SPDT single buttion multiple switches
-  pinMode(43, INPUT);     //Action Groups SPST Clock
-  pinMode(44, INPUT);     //Action Groups SPST Latch
-  pinMode(45, INPUT);     //Action Groups SPST Data
+  pinMode(43, INPUT_PULLUP);     //Action Group 2
+  pinMode(44, INPUT_PULLUP);     //Action Group 3
+  pinMode(45, INPUT_PULLUP);     //Action Group 4
+  pinMode(46, INPUT_PULLUP);     //Action Group 5
 
   //Pilot
   pinMode(47, INPUT_PULLUP);     //Roll Right Joystick
