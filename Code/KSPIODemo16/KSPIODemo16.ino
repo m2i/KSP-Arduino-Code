@@ -71,10 +71,10 @@
 #define CONTROLREFRESH  25
 
 // warnings
-#define GWARN           9     //9G Warning
-#define GCAUTION        5     //5G Caution
-#define FUELCAUTION     10.0  //10% Fuel Caution
-#define FUELWARN        5.0   //5% Fuel warning
+#define GWARN           9     // 9G Warning
+#define GCAUTION        5     // 5G Caution
+#define FUELCAUTION     10.0  // 10% Fuel Caution
+#define FUELWARN        5.0   // 5% Fuel warning
 
 unsigned long deadtime, deadtimeOld, controlTime, controlTimeOld, now;
 boolean Connected = false;
