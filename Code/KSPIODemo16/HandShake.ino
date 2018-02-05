@@ -1,7 +1,7 @@
 // Handshake
 
-void Handshake(){
-  digitalWrite(GLED,HIGH); 
+void Handshake() {
+  digitalWrite(GLED, HIGH);
 
   HPacket.id = 0;
   HPacket.M1 = 3;
@@ -9,11 +9,7 @@ void Handshake(){
   HPacket.M3 = 4;
 
   KSPBoardSendData(details(HPacket));
-  //Serial.println(F("KSP;0"));  
-  //delay(1000);
+  // Serial.println(F("KSP;0"));
+  // delay(1000);
 }
-
-
-
-
 
