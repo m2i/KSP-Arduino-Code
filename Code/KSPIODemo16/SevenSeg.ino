@@ -34,7 +34,7 @@ void displayfloat(LedControl lc, int address, float num) {
 }
 
 void displayFloat(LedControl lc, int address, float number) {
-  int digits[8];
+  byte digits[8];
   boolean decimals[8];
   for (int i = 0; i <= 7; i++) {
     decimals[i] = false;
