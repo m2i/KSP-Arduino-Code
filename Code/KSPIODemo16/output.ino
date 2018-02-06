@@ -79,14 +79,9 @@ else if (digitalRead(26) & digitalRead(27) == 1)
 //==============================================================================================
 if (digitalRead(27) == 0)         // Yaw Left CoPilot
   CPacket.Yaw = constrain( map(0,0,1024,-1000,1000), -1000, 1000 );
-//==============================================================================================
-//if (digitalRead(28))            // SAS
-//      MainControls(SAS, HIGH);
-//else
-//      MainControls(SAS, LOW);  
-//      
-if (digitalRead(28)) {            // SAS
-  if (bitRead(VData.ActionGroups,15) == 0) {
+//==============================================================================================     
+if (digitalRead(28) == 0) {       // SAS
+  if (bitRead(VData.ActionGroups,0) == 0) {
     MainControls(SAS, HIGH);
   } else {
     MainControls(SAS, LOW);
@@ -200,14 +195,9 @@ else if (digitalRead(51) & digitalRead(52) == 1)
 //==============================================================================================
 if (digitalRead(52) == 0)         // Yaw Left Pilot
   CPacket.Yaw = constrain( map(0,0,1024,-1000,1000), -1000, 1000 );
-//==============================================================================================
-//if (digitalRead(53))            // SAS
-//      MainControls(SAS, HIGH);
-//else
-//      MainControls(SAS, LOW);  
-//      
-if (digitalRead(53)) {            // SAS
-  if (bitRead(VData.ActionGroups,15) == 0) {
+//==============================================================================================    
+if (digitalRead(53) == 0) {       // SAS
+  if (bitRead(VData.ActionGroups,0) == 0) {
     MainControls(SAS, HIGH);
   } else {
     MainControls(SAS, LOW);

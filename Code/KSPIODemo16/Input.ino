@@ -13,14 +13,14 @@ int input() {
         Indicators();
 
         // -----------------------------------------------------------------------------------------
-        // displayFloat(lc,  0, VData.Alt);
-        // displayFloat(lc,  1, VData.Alt);
-        // displayFloat(lc1, 0, VData.Alt);
-        // displayFloat(lc1, 1, VData.Alt);
-        // displayFloat(lc2, 0, VData.Alt);
-        // displayFloat(lc2, 1, VData.Alt);
-        // displayFloat(lc3, 0, VData.Alt);
-        // displayFloat(lc3, 1, VData.Alt);
+//        displayFloat(lc,  0, VData.Alt);
+//        displayFloat(lc,  1, VData.Alt);
+//        displayFloat(lc1, 0, VData.Alt);
+//        displayFloat(lc1, 1, VData.Alt);
+//        displayFloat(lc2, 0, VData.Alt);
+//        displayFloat(lc2, 1, VData.Alt);
+//        displayFloat(lc3, 0, VData.Alt);
+//        displayFloat(lc3, 1, VData.Alt);
         displayfloat1(VData.Alt);
         displayfloat2(VData.Alt);
         displayfloat3(VData.Alt);
