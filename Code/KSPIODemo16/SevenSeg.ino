@@ -20,7 +20,7 @@ void displayFloat(LedControl lc, int address, float number) {
     decimals[i] = false;
   }
 
-  int power
+  int power;
   uint32_t numberInt;
 
   // check size of number, multiply or divide by ten while incrementing the power
