@@ -155,8 +155,8 @@ struct ControlPacket {
   byte      id;
   byte      MainControls;               // SAS RCS Lights Gear Brakes Precision Abort Stage
   byte      Mode;                       // 0 = stage, 1 = docking, 2 = map
-//  uint16_t  ControlGroup;               // control groups 1-10 in 2 bytes
-  unsigned int ControlGroup;            // control groups 1-10 in 2 bytes
+  uint16_t  ControlGroup;               // control groups 1-10 in 2 bytes
+//  unsigned int ControlGroup;            // control groups 1-10 in 2 bytes
   byte      NavballSASMode;             // AutoPilot mode
   byte      AdditionalControlByte1;
   int       Pitch;                      // -1000 -> 1000

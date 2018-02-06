@@ -21,14 +21,14 @@ int input() {
 //        displayFloat(lc2, 1, VData.Alt);
 //        displayFloat(lc3, 0, VData.Alt);
 //        displayFloat(lc3, 1, VData.Alt);
-        displayfloat1(VData.Alt);
-        displayfloat2(VData.Alt);
-        displayfloat3(VData.Alt);
-        displayfloat4(VData.Alt);
-        displayfloat5(VData.Alt);
-        displayfloat6(VData.Alt);
-        displayfloat7(VData.Alt);
-        displayfloat8(VData.Alt);
+        displayfloat(lc,  0, VData.Alt);
+        displayfloat(lc,  1, VData.Alt);
+        displayfloat(lc1, 0, VData.Alt);
+        displayfloat(lc1, 1, VData.Alt);
+        displayfloat(lc2, 0, VData.Alt);
+        displayfloat(lc2, 1, VData.Alt);
+        displayfloat(lc3, 0, VData.Alt);
+        displayfloat(lc3, 1, VData.Alt);
         // -----------------------------------------------------------------------------------------
 
         break;
