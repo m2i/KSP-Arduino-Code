@@ -13,26 +13,6 @@ void SevenSegSetup() {
   initialize(lc3);
 }
 
-void displayfloat(LedControl lc, int address, float num) {
-  a1 = trunc(fmod(num/10000000,10));
-  a2 = trunc(fmod(num/1000000,10));
-  a3 = trunc(fmod(num/100000,10));
-  a4 = trunc(fmod(num/10000,10));
-  a5 = trunc(fmod(num/1000,10));
-  a6 = trunc(fmod(num/100,10));
-  a7 = trunc(fmod(num/10,10));
-  a8 = trunc(fmod(num,10));
-
-  lc.setDigit(address,7,a1,false);
-  lc.setDigit(address,6,a2,false);
-  lc.setDigit(address,5,a3,false);
-  lc.setDigit(address,4,a4,false);
-  lc.setDigit(address,3,a5,false);
-  lc.setDigit(address,2,a6,false);
-  lc.setDigit(address,1,a7,false);
-  lc.setDigit(address,0,a8,false);
-}
-
 void displayFloat(LedControl lc, int address, float number) {
   byte digits[8];
   boolean decimals[8];
@@ -40,7 +20,8 @@ void displayFloat(LedControl lc, int address, float number) {
     decimals[i] = false;
   }
 
-  int power, numberInt;
+  int power
+  uint32_t numberInt;
 
   // check size of number, multiply or divide by ten while incrementing the power
   // variable until the number is in range. Large numbers should be shrunk to 4 or
@@ -60,7 +41,7 @@ void displayFloat(LedControl lc, int address, float number) {
     }
   }
   // ... or no size reduction is needed
-  numberInt = (int) number;
+  numberInt = (uint32_t) number;
 
   // if the power variable has two digits...
   if (power > 9) {
