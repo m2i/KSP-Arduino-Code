@@ -103,15 +103,6 @@ void displayFloat(LedControl lc, int address, float number) {
     digits[0] = numberInt;
     decimals[7] = true;
   }
-  
-//  lc.setDigit(address,7,digits[0],decimals[0]);
-//  lc.setDigit(address,6,digits[1],decimals[1]);
-//  lc.setDigit(address,5,digits[2],decimals[2]);
-//  lc.setDigit(address,4,digits[3],decimals[3]);
-//  lc.setDigit(address,3,digits[4],decimals[4]);
-//  lc.setDigit(address,2,digits[5],decimals[5]);
-//  lc.setDigit(address,1,digits[6],decimals[6]);
-//  lc.setDigit(address,0,digits[7],decimals[7]);
 
   for (int i = 0; i <= 7; i++) {
     byte digit  = digits[i];
