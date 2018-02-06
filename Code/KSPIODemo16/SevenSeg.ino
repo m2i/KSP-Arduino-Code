@@ -33,11 +33,10 @@ void displayfloat(LedControl lc, int address, float num) {
   lc.setDigit(address,0,a8,false);
 }
 
-void displayFloat(LedControl LCDisplay, int address, float number) {
+void displayFloat(LedControl lc, int address, float number) {
   int digits[8];
   boolean decimals[8];
   for (int i = 0; i <= 7; i++) {
-    digits[i] = 0;
     decimals[i] = false;
   }
 
@@ -48,16 +47,7 @@ void displayFloat(LedControl LCDisplay, int address, float number) {
   // 5 digits. Small numbers should be grown to up to 8 digits. Some numbers will
   // need no size altering.
   power = 0;
-  // negative power variable reduction
-  if (number < 10000000.0f) {
-    while (number < 10000000.0f) {
-      number *= 10;
-      power--;
-      if (power == -7)
-        break;
-    }
-    // positive two digit power variable reduction
-  } else if (number > 99999999999999.9f) {
+  if (number > 99999999999999.9f) {
     while (number > 9999.9f) {
       number /= 10;
       power++;
@@ -111,36 +101,29 @@ void displayFloat(LedControl LCDisplay, int address, float number) {
       numberInt /= 10;
     }
     digits[0] = numberInt;
-
-    // place location of decimal
-    if (power < 0) {
-      // change decimal boolean to true for the digit with the decimal
-      decimals[7 + power] = true;
-    } else {
-      decimals[7] = true;
-    }
+    decimals[7] = true;
   }
   
-  LCDisplay.setDigit(address,7,digits[0],decimals[0]);
-  LCDisplay.setDigit(address,6,digits[1],decimals[1]);
-  LCDisplay.setDigit(address,5,digits[2],decimals[2]);
-  LCDisplay.setDigit(address,4,digits[3],decimals[3]);
-  LCDisplay.setDigit(address,3,digits[4],decimals[4]);
-  LCDisplay.setDigit(address,2,digits[5],decimals[5]);
-  LCDisplay.setDigit(address,1,digits[6],decimals[6]);
-  LCDisplay.setDigit(address,0,digits[7],decimals[7]);
+//  lc.setDigit(address,7,digits[0],decimals[0]);
+//  lc.setDigit(address,6,digits[1],decimals[1]);
+//  lc.setDigit(address,5,digits[2],decimals[2]);
+//  lc.setDigit(address,4,digits[3],decimals[3]);
+//  lc.setDigit(address,3,digits[4],decimals[4]);
+//  lc.setDigit(address,2,digits[5],decimals[5]);
+//  lc.setDigit(address,1,digits[6],decimals[6]);
+//  lc.setDigit(address,0,digits[7],decimals[7]);
 
-//  for (int i = 0; i <= 7; i++) {
-//    byte digit  = digits[i];
-//    if (digit > 9) {
-//      if (digit > 20) {
-//        LCDisplay.setChar(address, 7-i, ' ', false);
-//      } else {
-//        LCDisplay.setChar(address, 7-i, 'E', false);
-//      }
-//    } else {
-//      LCDisplay.setDigit(address, 7-i, digit, decimals[i]);
-//    }
-//  }
+  for (int i = 0; i <= 7; i++) {
+    byte digit  = digits[i];
+    if (digit > 9) {
+      if (digit > 20) {
+        lc.setChar(address, 7-i, ' ', false);
+      } else {
+        lc.setChar(address, 7-i, 'E', false);
+      }
+    } else {
+      lc.setDigit(address, 7-i, digit, decimals[i]);
+    }
+  }
 }
 
