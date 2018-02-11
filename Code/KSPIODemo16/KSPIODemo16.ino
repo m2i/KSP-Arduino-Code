@@ -182,6 +182,7 @@ float a5;
 float a6;
 float a7;
 float a8;
+byte TSN = 0;
 
 #include "LedControl.h"
 LedControl lc  = LedControl(13, 11, 12, 2);   // Data, Clock, Load, # of displays
