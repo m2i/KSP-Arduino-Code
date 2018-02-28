@@ -36,14 +36,20 @@ void colorWipe(uint32_t c, uint8_t wait) {
 }
 
 void dim(Adafruit_NeoPixel strip, uint32_t interval) {
-  uint32_t timestep = interval / 15;
-  for (int i = 0; i < 15; i++) {
-    double intensity = pow(0.75, (float) i);
+  if (interval < 50) {
+    strip.setBrightness(0);
+  } else {
+    uint32_t timeStep = interval / 50;
+    float intensity = 1.0;
     uint8_t brightness = strip.getBrightness();
-    strip.setBrightness((uint8_t) brightness * intensity);
-    strip.show();
-    delay(timestep);
+    for (int i = 0; i < 50; i++) {
+      intensity -= .02;
+      strip.setBrightness((uint8_t) brightness * intensity);
+      strip.show();
+      delay(timeStep);
+    }
+    strip.setBrightness(0);
   }
-  strip.setBrightness(0);
+  strip.show();
 }
 
