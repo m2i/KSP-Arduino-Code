@@ -3,7 +3,7 @@ uint16_t  *address;
 byte      buffer[256];    //address for temporary storage and parsing buffer
 uint8_t   structSize;
 uint8_t   rx_array_inx;   //index for RX parsing buffer
-uint8_t   calc_CS;	      //calculated Chacksum
+uint8_t   calc_CS;        //calculated Chacksum
 
 // This shit contains stuff borrowed from EasyTransfer lib
 boolean KSPBoardReceiveData() {
