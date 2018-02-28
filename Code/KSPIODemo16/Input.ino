@@ -22,7 +22,7 @@ int input() {
         displayFloat(lc2, 0, (VData.CurrentStage/TSN));
         displayFloat(lc2, 1, VData.CurrentStage);
         displayFloat(lc3, 0, TSN);
-        displayFloat(lc3, 1, (VData.CurrentStage/TSN))
+        displayFloat(lc3, 1, (VData.CurrentStage/TSN));
         // -----------------------------------------------------------------------------------------
 
         break;
