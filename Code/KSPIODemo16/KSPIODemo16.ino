@@ -182,7 +182,6 @@ float a5;
 float a6;
 float a7;
 float a8;
-byte TSN = 0;
 
 #include "LedControl.h"
 LedControl lc  = LedControl(13, 11, 12, 2);   // Data, Clock, Load, # of displays
@@ -190,8 +189,12 @@ LedControl lc1 = LedControl(10, 8, 9, 2);     // Data, Clock, Load, # of display
 LedControl lc2 = LedControl(7, 5, 6, 2);      // Data, Clock, Load, # of displays
 LedControl lc3 = LedControl(4, 2, 3, 2);      // Data, Clock, Load, # of displays
 //--------------------------------
-int numled = 60;
-int pinnum = 44;
+uint32_t TSN = 0;
+uint8_t count = 0;
+uint8_t count2 = 0;
+uint8_t count3 = 0;
+int numled = 20;
+int pinnum = 6;
 
 #include <Adafruit_NeoPixel.h>
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numled, pinnum, NEO_GRBW + NEO_KHZ800);

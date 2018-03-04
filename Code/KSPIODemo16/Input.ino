@@ -13,8 +13,28 @@ int input() {
         Indicators();
 
         // -----------------------------------------------------------------------------------------
-        if (TSN == 0)
+        if(TSN == 0)
         {TSN = VData.TotalStage;}
+        
+        if(count == 2 && VData.CurrentStage/TSN == 1 && count2 != 1){
+        colorChange(strip.Color(0,50,0));
+        count = count+1;}
+        else if(count == 4 && VData.CurrentStage/TSN == 1 && count2 != 1){
+        colorChange(strip.Color(0,0,0));
+        count = 0;}
+        else if(VData.CurrentStage/TSN == 1)
+        count = count+1;
+        else if(VData.CurrentStage/TSN !=1 && count < 20 && count2 != 1){
+        colorChange(strip.Color(0,50,0));  
+        count = count+1;}
+        else if(VData.CurrentStage/TSN !=1 && count > 19 && count2 != 1)
+        count2 = 1;
+
+        if(count2 == 1 && count3 == 0)
+        colorChange(strip.Color(0,50,50));
+
+        
+        
         displayFloat(lc,  0, (VData.CurrentStage/VData.TotalStage)*100);
         displayFloat(lc,  1, VData.CurrentStage/TSN);
         displayFloat(lc1, 0, VData.TotalStage);
