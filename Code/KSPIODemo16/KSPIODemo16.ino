@@ -204,10 +204,6 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(numled, pinnum, NEO_GRBW + NEO_KHZ80
 void setup() {
   Serial.begin(115200);
 
-  // pinMode(51,INPUT_PULLUP); //Stage transition
-  // lcd.begin(16, 2);
-  // lcd.print("fuel");
-
   initLEDS();
   InitTxPackets();
   controlsInit();
@@ -219,13 +215,5 @@ void setup() {
 void loop() {
   input();
   output();
-  // lcd.setCursor(0, 1);
-  // lcd.print(VData.LiquidFuelTot);
-
-  // --------------------------------------------------------------------------------------------------
-  // display.show(12345,1000,ALIGN_LEFT);
-  // display.show(VData.LiquidFuelTot);
-  // display.show(x,ALIGN_LEFT);
-  // ---------------------------------------------------------------------------------------------------
-}
+  }
 
