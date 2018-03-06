@@ -193,11 +193,16 @@ uint32_t TSN = 0;
 uint8_t count = 0;
 uint8_t count2 = 0;
 uint8_t count3 = 0;
-int numled = 20;
+#define numled 20
 int pinnum = 6;
 
 #include <Adafruit_NeoPixel.h>
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numled, pinnum, NEO_GRBW + NEO_KHZ800);
+
+float redStates[numled];
+float blueStates[numled];
+float greenStates[numled];
+float fadeRate = 0.96;
 
 // -----------------------------------------------------------------------------------------------------
 
@@ -210,6 +215,7 @@ void setup() {
 
   LEDSAllOff();
   SevenSegSetup();
+  LEDsetup();
 }
 
 void loop() {

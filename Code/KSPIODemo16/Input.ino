@@ -30,9 +30,36 @@ int input() {
         else if(VData.CurrentStage/TSN !=1 && count > 19 && count2 != 1)
         count2 = 1;
 
-        if(count2 == 1 && count3 == 0)
+        if(count2 == 1 && count3 == 0){
+        colorChange(strip.Color(0,40,0));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 1){
+        colorChange(strip.Color(0,30,0));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 2){
+        colorChange(strip.Color(0,20,0));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 3){
+        colorChange(strip.Color(0,10,0));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 4){
+        colorChange(strip.Color(0,1,0));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 5){
+        colorChange(strip.Color(0,10,10));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 6){
+        colorChange(strip.Color(0,20,20));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 7){
+        colorChange(strip.Color(0,30,30));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 8){
+        colorChange(strip.Color(0,40,40));
+        count3 = count3+1;}
+        else if(count2 == 1 && count3 == 9){
         colorChange(strip.Color(0,50,50));
-
+        count3 = count3+1;}
         
         
         displayFloat(lc,  0, (VData.CurrentStage/VData.TotalStage)*100);
