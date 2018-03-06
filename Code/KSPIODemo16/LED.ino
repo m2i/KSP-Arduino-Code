@@ -136,6 +136,7 @@ void colorUndim(uint32_t wait) {
     delay(wait/256);
   }
 }
+<<<<<<< HEAD
 
 void dim(Adafruit_NeoPixel strip, uint32_t interval) {
   uint32_t timestep = interval / 15;
@@ -149,3 +150,6 @@ void dim(Adafruit_NeoPixel strip, uint32_t interval) {
   strip.setBrightness(0);
 }
 
+=======
+s
+>>>>>>> 7695b3341222e2ae7c254b8e5970461d188dd308
