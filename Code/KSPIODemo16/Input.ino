@@ -60,6 +60,9 @@ int input() {
         else if(count2 == 1 && count3 == 9){
         colorChange(strip.Color(0,50,50));
         count3 = count3+1;}
+        else if(count2 == 1 && count3 == 10){
+        Stars();
+        Stars();}
         
         
         displayFloat(lc,  0, (VData.CurrentStage/VData.TotalStage)*100);

@@ -30,14 +30,14 @@ void ignitionSequence() {
 
 
 void Stars() {
-   if (random(2) == 1) {
+   //if (random(2) == 1) {
       uint16_t i = random(numled);
       if (redStates[i] < 1 && greenStates[i] < 1 && blueStates[i] < 1) {
         redStates[i] = random(256);
         greenStates[i] = random(256);
         blueStates[i] = random(256);
       }
-    }
+    //}
     
     for(uint16_t j = 0; j < numled; j++) {
       if (redStates[j] > 1 || greenStates[j] > 1 || blueStates[j] > 1) {
