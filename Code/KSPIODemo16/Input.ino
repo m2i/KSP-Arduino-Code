@@ -65,14 +65,14 @@ int input() {
         Stars();}
         
         
-        displayFloat(lc,  0, (VData.CurrentStage/VData.TotalStage)*100);
-        displayFloat(lc,  1, VData.CurrentStage/TSN);
-        displayFloat(lc1, 0, VData.TotalStage);
-        displayFloat(lc1, 1, VData.CurrentStage);
-        displayFloat(lc2, 0, (VData.CurrentStage/TSN));
-        displayFloat(lc2, 1, VData.CurrentStage);
-        displayFloat(lc3, 0, TSN);
-        displayFloat(lc3, 1, (VData.CurrentStage/TSN));
+        displayFloat(lc,  0, VData.Alt);
+        displayFloat(lc,  1, VData.Alt);
+        displayFloat(lc1, 0, VData.Alt);
+        displayFloat(lc1, 1, VData.Alt);
+        displayFloat(lc2, 0, VData.Alt);
+        displayFloat(lc2, 1, VData.Alt);
+        displayFloat(lc3, 0, VData.Alt);
+        displayFloat(lc3, 1, VData.Alt);
         // -----------------------------------------------------------------------------------------
 
         break;
