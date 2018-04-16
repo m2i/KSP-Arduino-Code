@@ -13,19 +13,30 @@ void LEDsetup() {
 }
 
 void ignitionSequence() {
-        if(count == 2 && VData.CurrentStage/TSN == 1 && count2 != 1){
+  if(VData.CurrentStage / TSN == 1)
+  {
+    if(currentMillis - now >= 700)
+    {
+       digitalWrite(41, !digitalRead(41));
+       now = currentMillis;
+    }
+  }
+}
+  
+        /*if(count == 2 && VData.CurrentStage/TSN == 1 && count2 != 1){
         colorChange(strip.Color(0,50,0));
         count = count+1;}
         else if(count == 4 && VData.CurrentStage/TSN == 1 && count2 != 1){
         colorChange(strip.Color(0,0,0));
         count = 0;}
         else if(VData.CurrentStage/TSN == 1)
+       
         count = count+1;
         else if(VData.CurrentStage/TSN !=1 && count < 20 && count2 != 1){
         colorChange(strip.Color(0,50,0));  
         count = count+1;}
         else if(VData.CurrentStage/TSN !=1 && count > 19 && count2 != 1)
-        count2 = 1;
+        count2 = 1;*/
 }
 
 

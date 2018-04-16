@@ -76,7 +76,7 @@
 #define FUELCAUTION     10.0  // 10% Fuel Caution
 #define FUELWARN        5.0   // 5% Fuel warning
 
-unsigned long deadtime, deadtimeOld, controlTime, controlTimeOld, now;
+unsigned long deadtime, deadtimeOld, controlTime, controlTimeOld, now, currentMillis;
 boolean Connected = false;
 byte caution = 0, warning = 0, id;
 
@@ -208,6 +208,7 @@ float fadeRate = 0.30;
 
 void setup() {
   Serial.begin(115200);
+  now = millis();
 
   initLEDS();
   InitTxPackets();

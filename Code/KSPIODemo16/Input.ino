@@ -1,6 +1,5 @@
 int input() {
   int returnValue = -1;
-  now = millis();
 
   if (KSPBoardReceiveData()) {
     deadtimeOld = now;

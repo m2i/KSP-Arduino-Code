@@ -1,5 +1,5 @@
 void output() {
-  now = millis();
+  currentMillis = millis();
   controlTime = now - controlTimeOld;
   if (controlTime > CONTROLREFRESH) {
     controlTimeOld = now;
