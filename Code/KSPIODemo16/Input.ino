@@ -13,7 +13,7 @@ int input() {
         Indicators();
 
         // -----------------------------------------------------------------------------------------
-        if(TSN == 0)
+       /* if(TSN == 0)
         {TSN = VData.TotalStage;}
         
         if(count == 2 && VData.CurrentStage/TSN == 1 && count2 != 1){
@@ -63,7 +63,7 @@ int input() {
         else if(count2 == 1 && count3 == 10){
         Stars();
         Stars();}
-        
+        */
         
         displayFloat(lc,  0, VData.Alt);
         displayFloat(lc,  1, VData.Alt);

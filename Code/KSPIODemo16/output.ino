@@ -137,17 +137,17 @@ void controls() {
     if (digitalRead(39) == 0)         // Translation +Z
       CPacket.TZ = constrain( map(0, 0, 1024, -1000, 1000), -1000, 1000 );
     //==============================================================================================
-    if (digitalRead(40))              // Abort Sequence
+    if (digitalRead(40) == 0)              // Abort Sequence
       MainControls(ABORT, HIGH);
     else
       MainControls(ABORT, LOW);
     //==============================================================================================
-    if (digitalRead(41))              // Ignition Sequence
+/*    if (digitalRead(41) == 1)              // Ignition Sequence
       MainControls(STAGE, HIGH);
     else
       MainControls(STAGE, LOW);
-    //==============================================================================================
-    if (digitalRead(42))              // Stage transition
+*/    //==============================================================================================
+    if (digitalRead(42) == 1)              // Stage transition
       MainControls(STAGE, HIGH);
     else
       MainControls(STAGE, LOW);
@@ -157,17 +157,17 @@ void controls() {
     else
       ControlGroups(2, HIGH);
     //==============================================================================================
-    if (digitalRead(44))              // Action Group 3
+    if (digitalRead(A4))              // Action Group 3
       ControlGroups(3, LOW);
     else
       ControlGroups(3, HIGH);
     //==============================================================================================
-    if (digitalRead(45))              // Action Group 4
+    if (digitalRead(A5))              // Action Group 4
       ControlGroups(4, LOW);
     else
       ControlGroups(4, HIGH);
     //==============================================================================================
-    if (digitalRead(46))              // Action Group 5
+    if (digitalRead(A6))              // Action Group 5
       ControlGroups(5, LOW);
     else
       ControlGroups(5, HIGH);
@@ -238,9 +238,9 @@ void controlsInit() {
   pinMode(41, INPUT_PULLUP);    //Ignition
   pinMode(42, INPUT_PULLUP);    //Stages SPDT single buttion multiple switches
   pinMode(43, INPUT_PULLUP);    //Action Group 2
-  pinMode(44, INPUT_PULLUP);    //Action Group 3
-  pinMode(45, INPUT_PULLUP);    //Action Group 4
-  pinMode(46, INPUT_PULLUP);    //Action Group 5
+  pinMode(A4, INPUT_PULLUP);    //Action Group 3
+  pinMode(A5, INPUT_PULLUP);    //Action Group 4
+  pinMode(A6, INPUT_PULLUP);    //Action Group 5
 
   // Pilot
   pinMode(47, INPUT_PULLUP);    //Roll Right Joystick

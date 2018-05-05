@@ -194,7 +194,7 @@ uint8_t count = 0;
 uint8_t count2 = 0;
 uint8_t count3 = 0;
 #define numled 60
-int pinnum = 6;
+int pinnum = 44;
 
 #include <Adafruit_NeoPixel.h>
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numled, pinnum, NEO_GRBW + NEO_KHZ800);
