@@ -1,4 +1,4 @@
-void initialize(Adafruit_NeoPixel strip) {
+/*void initialize(Adafruit_NeoPixel strip) {
   strip.begin();
   strip.show();
 }
@@ -135,4 +135,4 @@ void colorUndim(uint32_t wait) {
     strip.show();
     delay(wait/256);
   }
-}
+}*/

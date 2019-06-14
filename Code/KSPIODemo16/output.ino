@@ -88,27 +88,27 @@ void controls() {
       }
     }
     //==============================================================================================
-    if (digitalRead(29))              // Action Group 1
+    if (digitalRead(29) == 0)              // Action Group 1
       ControlGroups(1, LOW);
     else
       ControlGroups(1, HIGH);
     //==============================================================================================
-    if (digitalRead(30))              // Lights
+    if (digitalRead(30) == 0)              // Lights
       MainControls(LIGHTS, LOW);
     else
       MainControls(LIGHTS, HIGH);
     //==============================================================================================
-    if (digitalRead(31))              // Brakes
+    if (digitalRead(31) == 0)              // Brakes
       MainControls(BRAKES, LOW);
     else
       MainControls(BRAKES, HIGH);
     //==============================================================================================
-    if (digitalRead(32))              // Gear
+    if (digitalRead(32) == 0)              // Gear
       MainControls(GEAR, LOW);
     else
       MainControls(GEAR, HIGH);
     //==============================================================================================
-    if (digitalRead(33))              // RCS
+    if (digitalRead(33) == 0)              // RCS
       MainControls(RCS, LOW);
     else
       MainControls(RCS, HIGH);
@@ -152,22 +152,22 @@ void controls() {
     else
       MainControls(STAGE, LOW);
     //==============================================================================================
-    if (digitalRead(43))              // Action Group 2
+    if (digitalRead(43) == 0)              // Action Group 2
       ControlGroups(2, LOW);
     else
       ControlGroups(2, HIGH);
     //==============================================================================================
-    if (digitalRead(A4))              // Action Group 3
+    if (digitalRead(A4) == 0)              // Action Group 3
       ControlGroups(3, LOW);
     else
       ControlGroups(3, HIGH);
     //==============================================================================================
-    if (digitalRead(A5))              // Action Group 4
+    if (digitalRead(A5) == 0)              // Action Group 4
       ControlGroups(4, LOW);
     else
       ControlGroups(4, HIGH);
     //==============================================================================================
-    if (digitalRead(A6))              // Action Group 5
+    if (digitalRead(A6) == 0)              // Action Group 5
       ControlGroups(5, LOW);
     else
       ControlGroups(5, HIGH);
@@ -223,11 +223,11 @@ void controlsInit() {
   pinMode(28, INPUT_PULLUP);    //SAS Joystick
 
   // Middle
-  pinMode(29, INPUT_PULLUP);    //Action Group 1
-  pinMode(30, INPUT_PULLUP);    //Lights
-  pinMode(31, INPUT_PULLUP);    //Breaks
-  pinMode(32, INPUT_PULLUP);    //Gears
-  pinMode(33, INPUT_PULLUP);    //RCS
+  pinMode(29, INPUT);    //Action Group 1
+  pinMode(30, INPUT);    //Lights
+  pinMode(31, INPUT);    //Breaks
+  pinMode(32, INPUT);    //Gears
+  pinMode(33, INPUT);    //RCS
   pinMode(34, INPUT_PULLUP);    //RCS Direction
   pinMode(35, INPUT_PULLUP);    //RCS Direction
   pinMode(36, INPUT_PULLUP);    //RCS Direction
@@ -237,10 +237,10 @@ void controlsInit() {
   pinMode(40, INPUT_PULLUP);    //Abort
   pinMode(41, INPUT_PULLUP);    //Ignition
   pinMode(42, INPUT_PULLUP);    //Stages SPDT single buttion multiple switches
-  pinMode(43, INPUT_PULLUP);    //Action Group 2
-  pinMode(A4, INPUT_PULLUP);    //Action Group 3
-  pinMode(A5, INPUT_PULLUP);    //Action Group 4
-  pinMode(A6, INPUT_PULLUP);    //Action Group 5
+  pinMode(43, INPUT);    //Action Group 2
+  pinMode(A4, INPUT);    //Action Group 3
+  pinMode(A5, INPUT);    //Action Group 4
+  pinMode(A6, INPUT);    //Action Group 5
 
   // Pilot
   pinMode(47, INPUT_PULLUP);    //Roll Right Joystick

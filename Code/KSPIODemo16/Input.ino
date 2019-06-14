@@ -63,16 +63,38 @@ int input() {
         else if(count2 == 1 && count3 == 10){
         Stars();
         Stars();}
-        */
+        */        
         
-        displayFloat(lc,  0, VData.Alt);
-        displayFloat(lc,  1, VData.Alt);
-        displayFloat(lc1, 0, VData.Alt);
-        displayFloat(lc1, 1, VData.Alt);
-        displayFloat(lc2, 0, VData.Alt);
-        displayFloat(lc2, 1, VData.Alt);
-        displayFloat(lc3, 0, VData.Alt);
-        displayFloat(lc3, 1, VData.Alt);
+        if (counter == 0){
+          displayFloat(lc,  0, VData.AP);
+          displayFloat(lc,  1, VData.PE);
+          displayFloat(lc1, 0, VData.RAlt);
+          
+          if(VData.RAlt < 32000){
+            displayFloat(lc1, 1, VData.Vsurf);}
+          else if (VData.RAlt > 32000){
+            displayFloat(lc1, 1, VData.VOrbit);}
+          
+          counter = counter + 1;}
+        else if (counter == 1){
+          displayFloat(lc2, 0, VData.LiquidFuelS);
+          displayFloat(lc2, 1, VData.ECharge);
+          counter = counter + 1;}
+        else if (counter == 2){
+          displayFloat(lc,  0, VData.AP);
+          displayFloat(lc,  1, VData.PE);
+          displayFloat(lc1, 0, VData.RAlt);
+          
+          if(VData.RAlt < 32000){
+            displayFloat(lc1, 1, VData.Vsurf);}
+          else if (VData.RAlt > 32000){
+            displayFloat(lc1, 1, VData.VOrbit);}
+        counter = counter + 1;}
+        else if (counter == 3){
+          displayFloat(lc2, 0, VData.LiquidFuelS);
+          displayFloat(lc3, 0, VData.MonoProp);
+          displayFloat(lc3, 1, VData.CurrentStage);
+        counter = 0;}
         // -----------------------------------------------------------------------------------------
 
         break;

@@ -89,13 +89,113 @@ void displayFloat(LedControl lc, int address, float number) {
     byte digit  = digits[i];
     if (digit > 9) {
       if (digit > 20) {
-        lc.setChar(address, 7-i, ' ', false);
+        lc.setChar(address, i, ' ', false);
       } else {
-        lc.setChar(address, 7-i, 'E', false);
+        lc.setChar(address, i, 'E', false);
       }
-    } else {
-      lc.setDigit(address, 7-i, digit, decimals[i]);
-    }
+    }/* else {
+      lc.setDigit(address, i, digit, decimals[i]);
+      if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0 && digits[5] == 0 && digits[6] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);
+        lc.setChar(address, 5, ' ', decimals[5]);
+        lc.setChar(address, 6, ' ', decimals[6]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0 && digits[5] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);
+        lc.setChar(address, 5, ' ', decimals[5]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);}
+      else if (digits[0] == 0 && digits[1] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);}
+      else if (digits[0] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);}
+    }*/
   }
+
+      if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0 && digits[5] == 0 && digits[6] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);
+        lc.setChar(address, 5, ' ', decimals[5]);
+        lc.setChar(address, 6, ' ', decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0 && digits[5] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);
+        lc.setChar(address, 5, ' ', decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0 && digits[4] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setChar(address, 4, ' ', decimals[4]);
+        lc.setDigit(address, 5, digits[5], decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0 && digits[3] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setChar(address, 3, ' ', decimals[3]);
+        lc.setDigit(address, 4, digits[4], decimals[4]);
+        lc.setDigit(address, 5, digits[5], decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0 && digits[1] == 0 && digits[2] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setChar(address, 2, ' ', decimals[2]);
+        lc.setDigit(address, 3, digits[3], decimals[3]);
+        lc.setDigit(address, 4, digits[4], decimals[4]);
+        lc.setDigit(address, 5, digits[5], decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0 && digits[1] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setChar(address, 1, ' ', decimals[1]);
+        lc.setDigit(address, 2, digits[2], decimals[2]);
+        lc.setDigit(address, 3, digits[3], decimals[3]);
+        lc.setDigit(address, 4, digits[4], decimals[4]);
+        lc.setDigit(address, 5, digits[5], decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+      else if (digits[0] == 0){
+        lc.setChar(address, 0, ' ', decimals[0]);
+        lc.setDigit(address, 1, digits[1], decimals[1]);
+        lc.setDigit(address, 2, digits[2], decimals[2]);
+        lc.setDigit(address, 3, digits[3], decimals[3]);
+        lc.setDigit(address, 4, digits[4], decimals[4]);
+        lc.setDigit(address, 5, digits[5], decimals[5]);
+        lc.setDigit(address, 6, digits[6], decimals[6]);
+        lc.setDigit(address, 7, digits[7], decimals[7]);}
+  
 }
 

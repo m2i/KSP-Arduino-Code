@@ -188,8 +188,11 @@ LedControl lc  = LedControl(13, 11, 12, 2);   // Data, Clock, Load, # of display
 LedControl lc1 = LedControl(10, 8, 9, 2);     // Data, Clock, Load, # of displays
 LedControl lc2 = LedControl(7, 5, 6, 2);      // Data, Clock, Load, # of displays
 LedControl lc3 = LedControl(4, 2, 3, 2);      // Data, Clock, Load, # of displays
+int counter = 0;
+int Toggle = 0;
+int Previous = LOW;
 //--------------------------------
-uint32_t TSN = 0;
+/*uint32_t TSN = 0;
 uint8_t count = 0;
 uint8_t count2 = 0;
 uint8_t count3 = 0;
@@ -202,7 +205,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(numled, pinnum, NEO_GRBW + NEO_KHZ80
 float redStates[numled];
 float blueStates[numled];
 float greenStates[numled];
-float fadeRate = 0.30;
+float fadeRate = 0.30;*/
 
 // -----------------------------------------------------------------------------------------------------
 
