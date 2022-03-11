@@ -68,6 +68,7 @@ boolean KSPBoardReceiveData() {
 }
 
 void KSPBoardSendData(uint8_t * address, uint8_t len) {
+  Serial.println("KSPBoardSendData");
   uint8_t CS = len;
   Serial.write(0xBE);
   Serial.write(0xEF);
@@ -78,5 +79,5 @@ void KSPBoardSendData(uint8_t * address, uint8_t len) {
     Serial.write(*(address+i));
   }
   Serial.write(CS);
+  Serial.println("Done KSPBoardSendData");
 }
-

@@ -211,12 +211,19 @@ float fadeRate = 0.30;*/
 
 void setup() {
   Serial.begin(115200);
-
-  initLEDS();
+  while (! Serial);
+  Serial.println("Serial begin");
+  
+  //initLEDS();
+  Serial.println("Start InitTxPackets");
   InitTxPackets();
+  Serial.println("Start ControlsInit");
   controlsInit();
+  Serial.println("Start Controls");
+  controls();
 
-  LEDSAllOff();
+  //LEDSAllOff();
+  Serial.println("Start SevenSegSetup");
   SevenSegSetup();
   //LEDsetup();
 }
@@ -225,4 +232,3 @@ void loop() {
   input();
   output();
   }
-

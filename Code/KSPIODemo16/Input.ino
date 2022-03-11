@@ -7,6 +7,7 @@ int input() {
     returnValue = id;
     switch (id) {
       case 0: // Handshake packet
+        Serial.println(F("Attempting Handshake"));
         Handshake();
         break;
       case 1:
@@ -118,4 +119,3 @@ int input() {
 byte ControlStatus(byte n) {
   return ((VData.ActionGroups >> n) & 1) == 1;
 }
-

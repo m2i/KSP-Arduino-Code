@@ -7,10 +7,12 @@ void initialize(LedControl lc) {
 }
 
 void SevenSegSetup() {
+  Serial.println("SevenSegSetup");
   initialize(lc);
   initialize(lc1);
   initialize(lc2);
   initialize(lc3);
+  Serial.println("Done SevenSegSetup");
 }
 
 void displayFloat(LedControl lc, int address, float number) {
@@ -198,4 +200,3 @@ void displayFloat(LedControl lc, int address, float number) {
         lc.setDigit(address, 7, digits[7], decimals[7]);}
   
 }
-

@@ -9,52 +9,10 @@ void output() {
 
 void controls() {
   if (Connected) {
-    /*
-        if (digitalRead(SASPIN)) { //--------- This is how you do main controls
-          MainControls(SAS, HIGH);
-          setSASMode(SMSAS); //setting SAS mode
-          //setNavballMode(NAVBallSURFACE); //setting navball mode
-        }
-        else {
-          //setNavballMode(NAVBallTARGET);
-          MainControls(SAS, LOW);
-        }
+    Serial.println("Controls");
 
-        if (digitalRead(RCSPIN))
-          MainControls(RCS, HIGH);
-        else
-          MainControls(RCS, LOW);
-
-        if (digitalRead(CG1PIN))   //--------- This is how you do control groups
-          ControlGroups(1, HIGH);
-        else
-          ControlGroups(1, LOW);
-
-
-           if (getSASMode() == SMPrograde) { //--------- This is how you read SAS modes
-             //Blink LED, do stuff, etc.
-           }
-
-           if (getNavballMode() == NAVBallTARGET) { //--------- This is how you read navball modes
-             //Blink LED, do stuff, etc.
-           }
-    */
-
-    //------------------------------------------------------------------------------------------------
-    /*  if (digitalRead(41))        //Stage transition
-        MainControls(STAGE, LOW);
-      else
-        MainControls(STAGE, HIGH);
-
-
-      //This is an example of reading analog inputs to an axis, with deadband and limits
-      CPacket.Throttle = constrain(map(analogRead(THROTTLEPIN), THROTTLEDB, 1024 - THROTTLEDB, 0, 1000), 0, 1000);
-      //CPacket.Throttle = constrain(map(analogRead(A5), THROTTLEDB, 1024 - THROTTLEDB, 0, 1000), 0, 1000);
-
-      //This is an example of reading analog inputs to an axis, with deadband and limits
-      CPacket.Pitch = constrain(map(analogRead(A2),0,1024,-1000,1000),-1000, 1000);
-      CPacket.Yaw = constrain(map(analogRead(A1),0,1024,-1000,1000),-1000, 1000);
-    */
+    Serial.println("End of controls comments");
+    Serial.println("Start of controls");
     //=================================================================================================
     if (digitalRead(22) == 0 & digitalRead(47) == 1 & digitalRead(48) == 1 & digitalRead(49) == 1 & digitalRead(50) == 1 & digitalRead(51) == 1 & digitalRead(52) == 1)         // Roll Right CoPilot
       CPacket.Roll = constrain( map(1024, 0, 1024, -1000, 1000), -1000, 1000 );
@@ -93,25 +51,33 @@ void controls() {
     else
       ControlGroups(1, HIGH);
     //==============================================================================================
-    if (digitalRead(30) == 0)              // Lights
+    if (digitalRead(30) == 0){              // Lights
       MainControls(LIGHTS, LOW);
-    else
+      Serial.println("Lights off");}
+    else {
       MainControls(LIGHTS, HIGH);
+      Serial.println("Lights on");}
     //==============================================================================================
-    if (digitalRead(31) == 0)              // Brakes
+    if (digitalRead(31) == 0){              // Brakes
       MainControls(BRAKES, LOW);
-    else
+      Serial.println("Brakes off");}
+    else {
       MainControls(BRAKES, HIGH);
+      Serial.println("Brakes on");}
     //==============================================================================================
-    if (digitalRead(32) == 0)              // Gear
+    if (digitalRead(32) == 0){              // Gear
       MainControls(GEAR, LOW);
-    else
+      Serial.println("Gear up");}
+    else {
       MainControls(GEAR, HIGH);
+      Serial.println("Gear down");}
     //==============================================================================================
-    if (digitalRead(33) == 0)              // RCS
+    if (digitalRead(33) == 0){              // RCS
       MainControls(RCS, LOW);
-    else
+      Serial.println("RCS off");}
+    else {
       MainControls(RCS, HIGH);
+      Serial.println("RCS on");}
     //==============================================================================================
     if (digitalRead(34) == 0)         // Translation -X
       CPacket.TX = constrain( map(1024, 0, 1024, -1000, 1000), -1000, 1000 );
@@ -142,11 +108,11 @@ void controls() {
     else
       MainControls(ABORT, LOW);
     //==============================================================================================
-/*    if (digitalRead(41) == 1)              // Ignition Sequence
+    if (digitalRead(41) == 1)              // Ignition Sequence
       MainControls(STAGE, HIGH);
     else
       MainControls(STAGE, LOW);
-*/    //==============================================================================================
+    //==============================================================================================
     if (digitalRead(42) == 1)              // Stage transition
       MainControls(STAGE, HIGH);
     else
@@ -208,11 +174,15 @@ void controls() {
     //=================================================================================================
     //-------------------------------------------------------------------------------------------------
 
+    Serial.println("Start KSPBoardSendData");
     KSPBoardSendData(details(CPacket));
+    Serial.println("Done Controls");
   }
 }
 
 void controlsInit() {
+  Serial.println("ControlsInit");
+  Serial.println("Copilot");
   // Copilot
   pinMode(22, INPUT_PULLUP);    //Roll Right Joystick
   pinMode(23, INPUT_PULLUP);    //Roll Left Joystick
@@ -222,6 +192,7 @@ void controlsInit() {
   pinMode(27, INPUT_PULLUP);    //Yaw Left Joystick
   pinMode(28, INPUT_PULLUP);    //SAS Joystick
 
+  Serial.println("Middle");
   // Middle
   pinMode(29, INPUT);    //Action Group 1
   pinMode(30, INPUT);    //Lights
@@ -242,6 +213,7 @@ void controlsInit() {
   pinMode(A5, INPUT);    //Action Group 4
   pinMode(A6, INPUT);    //Action Group 5
 
+  Serial.println("Pilot");
   // Pilot
   pinMode(47, INPUT_PULLUP);    //Roll Right Joystick
   pinMode(48, INPUT_PULLUP);    //Roll Left Joystick
@@ -251,8 +223,10 @@ void controlsInit() {
   pinMode(52, INPUT_PULLUP);    //Yaw Left Joystick
   pinMode(53, INPUT_PULLUP);    //SAS Joystick
 
+  Serial.println("Analog");
   // Analog
   pinMode(A0, INPUT);           //Throttle
+  Serial.println("Done ControlsInit");
 }
 
 byte getSASMode() {
@@ -286,4 +260,3 @@ void ControlGroups(byte n, boolean s) {
   else
     CPacket.ControlGroup &= ~(1 << n);      // forces nth bit of x to be 0.  all other bits left alone.
 }
-
