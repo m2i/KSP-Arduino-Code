@@ -3,6 +3,7 @@ int input() {
   now = millis();
 
   if (KSPBoardReceiveData()) {
+    Serial.println("Recieve Data");
     deadtimeOld = now;
     returnValue = id;
     switch (id) {

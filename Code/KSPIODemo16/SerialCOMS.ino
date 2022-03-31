@@ -9,9 +9,10 @@ uint8_t   calc_CS;        //calculated Chacksum
 boolean KSPBoardReceiveData() {
   if ((rx_len == 0)&&(Serial.available()>3)) {
     while(Serial.read()!= 0xBE) {
-      if (Serial.available() == 0)
+      if (Serial.available() == 0);
         return false;  
     }
+    Serial.println("Fail 001");
     if (Serial.read() == 0xEF) {
       rx_len = Serial.read();   
       id = Serial.read(); 
@@ -20,11 +21,11 @@ boolean KSPBoardReceiveData() {
       switch(id) {
       case 0:
         structSize = sizeof(HPacket);   
-        address = (uint16_t*)&HPacket;     
+        address = (uint16_t*)&HPacket;
         break;
       case 1:
         structSize = sizeof(VData);   
-        address = (uint16_t*)&VData;     
+        address = (uint16_t*)&VData; 
         break;
       }
     }
@@ -32,11 +33,12 @@ boolean KSPBoardReceiveData() {
     // make sure the binary structs on both Arduinos are the same size.
     if(rx_len != structSize) {
       rx_len = 0;
+      Serial.println("Fail 2");
       return false;
     }   
   }
-
-  if(rx_len != 0) {
+  
+  if(rx_len == 0) {
     while(Serial.available() && rx_array_inx <= rx_len) {
       buffer[rx_array_inx++] = Serial.read();
     }
@@ -55,15 +57,18 @@ boolean KSPBoardReceiveData() {
         memcpy(address,buffer,structSize);
         rx_len = 0;
         rx_array_inx = 1;
+        Serial.println("Worked!");
         return true;
       } else {
         // failed checksum, need to clear this out anyway
         rx_len = 0;
         rx_array_inx = 1;
+        Serial.println("Fail 3");
         return false;
       }
     }
   }
+  Serial.println("Fail 4");
   return false;
 }
 

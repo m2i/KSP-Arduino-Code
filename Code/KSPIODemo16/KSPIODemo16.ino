@@ -210,15 +210,16 @@ float fadeRate = 0.30;*/
 // -----------------------------------------------------------------------------------------------------
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(38400);
   while (! Serial);
   Serial.println("Serial begin");
   
   //initLEDS();
   Serial.println("Start InitTxPackets");
-  InitTxPackets();
+  InitTxPackets(); //in utilities file
   Serial.println("Start ControlsInit");
   controlsInit();
+
   Serial.println("Start Controls");
   controls();
 

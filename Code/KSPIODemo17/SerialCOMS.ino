@@ -54,6 +54,7 @@ boolean KSPBoardReceiveData() {
         memcpy(address,buffer,structSize);
         rx_len = 0;
         rx_array_inx = 1;
+        Serial.println("Worked!");
         return true;
       }
       else{
@@ -64,7 +65,7 @@ boolean KSPBoardReceiveData() {
       }
     }
   }
-
+  Serial.println("Fail 4");
   return false;
 }
 
